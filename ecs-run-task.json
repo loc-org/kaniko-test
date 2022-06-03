@@ -1,0 +1,19 @@
+{
+  "cluster": "kaniko-demo-cluster",
+  "count": 1,
+  "launchType": "FARGATE",
+  "networkConfiguration": {
+    "awsvpcConfiguration": {
+      "subnets": [
+        "subnet-0c8c9e8c5fae7356a",
+        "subnet-09d6725ac672682ee",
+        "subnet-0ec4e135306025c55"
+      ],
+      "securityGroups": [
+        "sg-005a9da8b944ccf41"
+      ],
+      "assignPublicIp": "ENABLED"
+    }
+  },
+  "platformVersion": "1.4.0"
+}

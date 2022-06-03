@@ -1,0 +1,28 @@
+{
+    "family": "kaniko-demo",
+    "taskRoleArn": "arn:aws:iam::398692602192:role/pids-ci-controller-task-role",
+    "executionRoleArn": "arn:aws:iam::398692602192:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "containerDefinitions": [
+        {
+            "name": "kaniko",
+            "image": "398692602192.dkr.ecr.ap-southeast-1.amazonaws.com/kaniko-builder:executor",
+            "command": [
+                "--context",
+                "git://github.com/ollypom/mysfits.git",
+                "--context-sub-path",
+                "./api",
+                "--dockerfile",
+                "Dockerfile.v3",
+                "--destination",
+                "398692602192.dkr.ecr.ap-southeast-1.amazonaws.com/kaniko-demo:latest",
+                "--force"
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024"
+}
